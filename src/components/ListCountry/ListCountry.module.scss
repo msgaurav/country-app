@@ -1,0 +1,170 @@
+.ListCountry_wrapper {
+    max-width: 75%;
+    margin: auto;
+    padding: 3rem 1rem 7rem;
+
+    .searchInput_Container {
+        position: relative;
+        display: flex;
+        border-bottom: 1px solid grey;
+
+        .search_icon {
+            position: absolute;
+            top: 11px;
+            left: 7px;
+            font-size: 1.5rem;
+            color: darkgrey;
+        }
+
+        .inputSearch_country {
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 15px 65px 15px 40px;
+            font-size: 1rem;
+        }
+
+        .icon_container {
+            position: absolute;
+            top: 8px;
+            right: 15px;
+            
+            .cancel_icon {
+                color: red;
+                font-size: 2rem;
+                cursor: pointer;
+            }
+
+            .add_icon {
+                color: green;
+                font-size: 2rem;
+                cursor: pointer;
+            }
+
+            .addFlag_modal_container {
+                position: fixed;
+                z-index: 1;
+                padding-top: 100px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgb(0,0,0);
+                background-color: rgba(0,0,0,0.4);
+
+                .addFlag_modal_content {
+                    margin: auto;
+                    width: 40%;
+                    padding: 1.5rem 2rem;
+                    border: 1px solid #888;
+                    background-color: antiquewhite;
+
+                    .closeModal_icon {
+                        float: right;
+                        color: red;
+                        font-size: 1.7rem;
+                        cursor: pointer;
+                    }
+
+                    .inputForm_Container {
+                        input {
+                            display: block;
+                        }
+
+                        input, select {
+                            width: 50%;
+                            padding: 7px;
+                            font-size: 1rem;
+                            margin: 10px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .countryList_container {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        margin-top: 3rem;
+
+        .countryList_item {
+            p {
+                margin: 0;
+            }
+            
+            display: flex;
+            margin: 1rem 0;
+            padding: 15px;
+            background-color: white;
+            border: 0.5px solid grey;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+            .countryList_flag {
+                img {
+                    width: 105px;
+                }
+            }
+
+            .countryList_details {
+                p {
+                    margin-top: 2px;
+                }
+
+                flex: 1;
+                margin-left: 15px;
+                padding-left: 15px;
+                border-left: 1px solid lightgray;
+            }
+
+            .removeCountyList_icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                button {
+                    border: none;
+                    background-color: lightcoral;
+                    color: white;
+                    font-weight: bold;
+                    border-radius: 50%;
+                    padding: 7px;
+                    cursor: pointer;
+        
+                    &:focus, &:hover {
+                        outline: none;
+                        background-color: red;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1300px) {
+        .addFlag_modal_content {
+            width: 80% !important;
+        }
+    }
+
+    @media only screen and (max-width: 570px) {
+        max-width: 100%;
+
+        .addFlag_modal_content {
+            width: 90% !important;
+
+            .inputForm_Container {
+                input, select {
+                    width: 100% !important;
+                }
+            }
+        }
+        
+        .countryList_flag {
+            img {
+                height: 100%;
+            }
+        }
+    }
+}
